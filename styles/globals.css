@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-start-rgb: rgb(65, 104, 96);
+  --background-end-rgb: rgb(62, 37, 78);
+}
+
+body {
+  background: rgb(var(--background-start-rgb));
+  background: linear-gradient(90deg, var(--background-start-rgb) 0%, var(--background-end-rgb) 100%);
+  background-size: 400%;
+  animation: background-gradient 10s ease-in-out infinite;
+  height: 100vh;
+}
+
+* {
+  font-family: Geo !important;
+}
+
+.bounce {
+  animation: bounce-in-out 15s alternate infinite;
+}
+
+@keyframes background-gradient {
+  0% {
+    background-position: 50% 0%;
+    motion-rotation: 70deg;
+  }
+
+  25% {
+    background-position: 100% 50%;
+    motion-rotation: 0deg;
+  }
+
+  50% {
+    background-position: 0% 100%;
+    motion-rotation: 45deg;
+  }
+
+  75% {
+    background-position: 50% 100%;
+    motion-rotation: 90deg;
+  }
+
+  90% {
+    background-position: 100% 0%;
+    motion-rotation: 150deg;
+  }
+
+  100% {
+    background-position: 50% 0%;
+    motion-rotation: 240deg;
+  }
+}
+
+@keyframes bounce-in-out {
+  from {
+    scale: 150%;
+  }
+
+  25% {
+    scale: 160%;
+  }
+
+  75% {
+    scale: 140%;
+  }
+
+  to {
+    scale: 150%;
+  }
+}
